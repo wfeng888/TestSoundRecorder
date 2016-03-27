@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/sound_content_width"
+    android:layout_height="@dimen/sound_content_height"
+    android:background="@drawable/shape_soundrecorder_bg_for_pannel" 
+    
+    >
+    <TextView
+        android:id="@+id/time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/audio_top_time_text_height"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/audio_top_time_text_margin_top"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:layout_centerInParent="true"
+        android:text="00:00:00:000" />
+
+    <com.paic.pamit.audio.ui.SpectrumView
+        android:id="@+id/audio_content"
+        android:layout_width="@dimen/audio_spectrumview_width"
+        android:layout_height="@dimen/audio_spectrumview_height"
+        android:layout_below="@id/time_text" >
+    </com.paic.pamit.audio.ui.SpectrumView>
+    
+    <include layout="@layout/seekbar_layout"
+        android:id="@+id/seekbar_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/seekbar_layout_margin_botton"
+        />
+    
+    <RelativeLayout
+        android:id="@+id/audio_control_pannel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/audio_record_padding_bottom"
+        android:paddingTop="@dimen/audio_record_padding_top"
+        android:layout_below="@id/audio_content"
+        android:layout_marginTop="@dimen/audio_control_pannel_margin_top"
+        android:layout_alignParentBottom="true"
+        >
+        
+        <ImageButton
+            android:id="@+id/btn_record_pause"
+            style="@style/CtrlBtnCenter"
+            android:background="@drawable/btn_record_pause"
+            android:visibility="invisible"
+             />
+        <ImageButton
+            android:id="@+id/btn_record"
+            style="@style/CtrlBtnCenter"
+            android:background="@drawable/btn_record"
+            android:soundEffectsEnabled="false"
+            android:scaleType="centerInside"
+             />
+
+        
+        <ImageButton
+            android:id="@+id/btn_play_stop"
+            style="@style/CtrlBtnLeft"
+            android:background="@drawable/btn_play_stop"
+            android:soundEffectsEnabled="false"
+            android:layout_toLeftOf="@id/btn_record_pause"
+             />
+        <ImageButton
+            android:id="@+id/btn_record_stop"
+            style="@style/CtrlBtnLeft"
+            android:background="@drawable/btn_record_stop"
+            android:layout_toLeftOf="@id/btn_record_pause"
+            android:visibility="invisible"
+             />
+        <ImageButton
+            android:id="@+id/btn_finish"
+            style="@style/CtrlBtnLeft"
+            android:background="@drawable/btn_finish"
+            android:soundEffectsEnabled="false"
+            android:layout_toLeftOf="@id/btn_record"
+             />
+         
+         
+        
+        <ImageButton
+            android:id="@+id/btn_play"
+            style="@style/CtrlBtnRight"
+            android:background="@drawable/btn_play" 
+            android:layout_toRightOf="@id/btn_record_pause"/>
+        
+        <ImageButton
+            android:id="@+id/btn_play_pause"
+            style="@style/CtrlBtnRight"
+            android:background="@drawable/btn_play_pause"
+            android:layout_toRightOf="@id/btn_record_pause"
+            android:visibility="invisible"
+             />
+         <ImageButton
+            android:id="@+id/btn_give_up"
+            style="@style/CtrlBtnRight"
+            android:background="@drawable/btn_mark_point_del"
+            android:layout_toRightOf="@id/btn_record_pause"
+            android:visibility="invisible"
+             />
+    </RelativeLayout>
+
+
+</RelativeLayout>
